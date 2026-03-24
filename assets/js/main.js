@@ -1,12 +1,13 @@
 /**
  * Gubel Family Vineyards — Main JavaScript
- * Handles: navigation, scroll effects, animations
+ * Handles: navigation, scroll effects, animations, hero parallax
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
   initScrollEffects();
   initAnimations();
+  initHero();
 });
 
 /* --- Navigation --- */
@@ -19,24 +20,55 @@ function initNavigation() {
   // Mobile menu toggle
   if (toggle && mobileMenu) {
     toggle.addEventListener('click', () => {
-      mobileMenu.classList.toggle('nav__mobile--open');
-      toggle.setAttribute('aria-expanded',
-        mobileMenu.classList.contains('nav__mobile--open'));
+      const isOpen = mobileMenu.classList.toggle('nav__mobile--open');
+      toggle.classList.toggle('nav__toggle--open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+      mobileMenu.setAttribute('aria-hidden', !isOpen);
+
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
     // Close menu on link click
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.remove('nav__mobile--open');
+        toggle.classList.remove('nav__toggle--open');
         toggle.setAttribute('aria-expanded', 'false');
+        mobileMenu.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
       });
     });
   }
 
   // Nav background on scroll
-  if (nav) {
+  if (nav && !nav.classList.contains('nav--scrolled')) {
+    const updateNav = () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 80);
+    };
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+  }
+}
+
+/* --- Hero --- */
+function initHero() {
+  const hero = document.querySelector('.hero');
+  if (!hero) return;
+
+  // Trigger subtle zoom-out on hero background
+  requestAnimationFrame(() => {
+    hero.classList.add('hero--loaded');
+  });
+
+  // Parallax effect on hero background
+  const heroBg = hero.querySelector('.hero__bg');
+  if (heroBg) {
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('nav--scrolled', window.scrollY > 50);
+      const scrolled = window.scrollY;
+      if (scrolled < window.innerHeight) {
+        heroBg.style.transform = `scale(${1 + scrolled * 0.0001}) translateY(${scrolled * 0.3}px)`;
+      }
     }, { passive: true });
   }
 }
@@ -60,6 +92,13 @@ function initAnimations() {
   const animatedElements = document.querySelectorAll('[data-animate]');
   if (!animatedElements.length) return;
 
+  // Check for reduced motion preference
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    animatedElements.forEach(el => el.classList.add('is-visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -68,8 +107,8 @@ function initAnimations() {
       }
     });
   }, {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.1,
+    rootMargin: '0px 0px -60px 0px'
   });
 
   animatedElements.forEach(el => observer.observe(el));
