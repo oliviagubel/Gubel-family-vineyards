@@ -10,7 +10,7 @@
   <meta property="og:title" content="Gubel Family Vineyards">
   <meta property="og:description" content="Estate-grown Cabernet Sauvignon from Calistoga, Napa Valley.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://gubelfamilyvineyards.com">
+  <meta property="og:url" content="https://drinkchouchou.com">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,14 +24,13 @@
 
   <!-- Navigation -->
   <nav class="nav" aria-label="Main navigation">
-    <a href="index.html" class="nav__logo">
-      <img src="assets/images/logo.svg" alt="Gubel Family Vineyards" width="150" height="50">
-    </a>
+    <a href="index.html" class="nav__logo">Gubel Family Vineyards</a>
 
     <ul class="nav__links">
       <li><a href="pages/our-story.html" class="nav__link">Our Story</a></li>
       <li><a href="pages/crafting-excellence.html" class="nav__link">Crafting Excellence</a></li>
-      <li><a href="pages/wines.html" class="nav__link">Our Wines</a></li>
+      <li><a href="pages/our-soils.html" class="nav__link">Our Soils</a></li>
+      <li><a href="pages/wines.html" class="nav__link">Wines</a></li>
       <li><a href="pages/wine-club.html" class="nav__link">Wine Club</a></li>
       <li><a href="pages/contact.html" class="nav__link">Contact</a></li>
     </ul>
@@ -47,68 +46,102 @@
   <div class="nav__mobile" aria-hidden="true">
     <a href="pages/our-story.html" class="nav__link">Our Story</a>
     <a href="pages/crafting-excellence.html" class="nav__link">Crafting Excellence</a>
-    <a href="pages/wines.html" class="nav__link">Our Wines</a>
+    <a href="pages/our-soils.html" class="nav__link">Our Soils</a>
+    <a href="pages/wines.html" class="nav__link">Wines</a>
     <a href="pages/wine-club.html" class="nav__link">Wine Club</a>
     <a href="pages/contact.html" class="nav__link">Contact</a>
   </div>
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="hero__bg" style="background-image: url('assets/images/hero-vineyard.jpg');"></div>
+  <section class="hero" id="hero">
+    <div class="hero__bg" style="background-image: url('vineyard.png');"></div>
     <div class="hero__content" data-animate>
-      <p class="hero__subtitle">Calistoga, Napa Valley</p>
+      <p class="hero__subtitle">Single Vineyard Estate &middot; Calistoga, Napa Valley</p>
       <h1 class="hero__title">Estate Grown.<br>Family Crafted.</h1>
-      <p style="color: rgba(255,255,255,0.8); margin-bottom: 2rem;">
-        Single-vineyard Cabernet Sauvignon from our private estate in the heart of Napa Valley.
-      </p>
-      <a href="pages/wines.html" class="btn btn--primary">Explore Our Wines</a>
+      <p class="hero__text">Our wine is grown and produced on our private single vineyard estate in the heart of Napa Valley, California.</p>
+      <a href="pages/wines.html" class="btn btn--outline-light">Explore Our Wines</a>
+    </div>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
     </div>
   </section>
 
-  <!-- Introduction -->
-  <section class="section">
-    <div class="container" data-animate>
-      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-        <p class="hero__subtitle" style="color: var(--color-gold);">Our Philosophy</p>
-        <h2>From Our Vineyard to Your Table</h2>
-        <p style="margin: var(--space-md) auto;">
-          At Gubel Family Vineyards, we believe great wine begins in the soil. Our estate vineyard in Calistoga's volcanic terroir produces Cabernet Sauvignon of exceptional depth and character, crafted with minimal intervention to let the land speak.
-        </p>
-        <a href="pages/our-story.html" class="btn btn--outline">Our Story</a>
-      </div>
+  <!-- Story Introduction — Editorial Block -->
+  <section class="editorial" data-animate>
+    <div class="editorial__image">
+      <img src="joanneandgustavo.png" alt="Gustavo and Joanne Gubel, founders of Gubel Family Vineyards" loading="lazy">
+    </div>
+    <div class="editorial__content">
+      <span class="label">How It All Began</span>
+      <h2>A Family's Journey</h2>
+      <hr class="divider">
+      <p>It was Dr. Isaac Gubel's love for the early Cabernets from the Mendoza region of Argentina that awakened his young son's taste for the novel grape. Gustavo would sneak sips of wine at family barbecues on "The Island" in the outskirts of Buenos Aires.</p>
+      <a href="pages/our-story.html" class="btn btn--outline">Read Our Story</a>
     </div>
   </section>
 
   <!-- Featured Wine -->
-  <section class="section" style="background-color: var(--color-dark); color: var(--color-white);">
+  <section class="featured-wine">
     <div class="container" data-animate>
-      <div style="display: grid; grid-template-columns: 1fr; gap: var(--space-lg); align-items: center; text-align: center;">
-        <div>
-          <p class="hero__subtitle">Flagship Wine</p>
-          <h2>Clone 6 Cabernet Sauvignon</h2>
-          <p style="color: rgba(255,255,255,0.7); margin: var(--space-md) auto; max-width: 500px;">
-            Our estate Clone 6 Cabernet Sauvignon, aged 20 months in French oak. Rich, structured, and expressive of Calistoga's volcanic soils.
-          </p>
-          <p style="color: var(--color-gold); font-family: var(--font-heading); font-size: 1.25rem; margin-bottom: var(--space-md);">
-            94 Points — The Tasting Panel
-          </p>
-          <a href="pages/wines.html" class="btn btn--primary">Shop Now</a>
-        </div>
-      </div>
+      <span class="label label--light">Flagship Wine</span>
+      <h2>Clone 6 Cabernet Sauvignon</h2>
+      <hr class="divider divider--center" style="background-color: var(--color-gold-light); margin-top: var(--space-md); margin-bottom: var(--space-lg);">
+      <p class="featured-wine__rating">94 Points</p>
+      <p class="featured-wine__source">The Tasting Panel / Somm</p>
+      <p class="featured-wine__description">A single vineyard Cab grown on volcanic soils, aged 20 months in French oak. Fresh aromas of blackberry and vanilla lead to teeth-coating tannins. Sun-drenched boysenberry displays regal presence. The wine is refined and linear, with intensity of flavor.</p>
+      <a href="pages/wines.html" class="btn btn--primary">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- Terroir — Editorial Block (reversed) -->
+  <section class="editorial editorial--reverse" data-animate>
+    <div class="editorial__image">
+      <img src="calistoga.png" alt="Volcanic soils of the Calistoga AVA in Napa Valley" loading="lazy">
+    </div>
+    <div class="editorial__content">
+      <span class="label">Calistoga AVA</span>
+      <h2>Rooted in Volcanic Soils</h2>
+      <hr class="divider">
+      <p>Located at the northern tip of Napa Valley, our estate vineyards are rooted in volcanic-alluvial soil — the ideal terroir for producing complex, age-worthy Cabernet Sauvignon with bold character.</p>
+      <a href="pages/our-soils.html" class="btn btn--outline">Discover Our Terroir</a>
     </div>
   </section>
 
   <!-- Wine Club CTA -->
-  <section class="section">
+  <section class="section section--large" style="background-color: var(--color-cream-dark);">
     <div class="container" data-animate>
-      <div style="text-align: center; max-width: 700px; margin: 0 auto;">
-        <p class="hero__subtitle" style="color: var(--color-gold);">Join the Family</p>
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <span class="label">Join the Family</span>
         <h2>Wine Club</h2>
-        <p style="margin: var(--space-md) auto;">
-          Become a member and receive our estate wines delivered to your door. Enjoy exclusive access, special pricing, and invitations to vineyard events.
-        </p>
-        <a href="pages/wine-club.html" class="btn btn--outline">Learn More</a>
+        <hr class="divider divider--center">
+        <p style="font-size: 1.1rem; line-height: 1.9; color: var(--color-dark-light); margin: var(--space-md) auto;">Become a member and receive our estate wines delivered to your door. Enjoy exclusive access, special pricing, and invitations to vineyard events.</p>
+        <a href="pages/wine-club.html" class="btn btn--dark">Become a Member</a>
       </div>
+    </div>
+  </section>
+
+  <!-- Estate Image — Full Bleed -->
+  <section class="editorial" data-animate>
+    <div class="editorial__image" style="min-height: 500px;">
+      <img src="grapes.png" alt="Cabernet Sauvignon grapes on the vine at Gubel Family Vineyards" loading="lazy">
+    </div>
+    <div class="editorial__content" style="text-align: center; align-items: center;">
+      <span class="label">From Our Vineyard to Your Table</span>
+      <h2>Crafting Excellence</h2>
+      <hr class="divider divider--center">
+      <p style="text-align: center;">Hand-harvested under the cover of night, meticulously sorted, fermented in stainless steel, and aged 20 months in French oak. Every step is a testament to our commitment to quality.</p>
+      <a href="pages/crafting-excellence.html" class="btn btn--outline">Our Winemaking</a>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section--quote">
+    <div class="container" data-animate>
+      <blockquote class="pullquote">
+        <p>"From our vineyard to your table, delivered with care."</p>
+        <cite>— Gustavo Gubel, Founder and Owner</cite>
+      </blockquote>
     </div>
   </section>
 
@@ -126,7 +159,8 @@
           <h3 class="footer__heading">Explore</h3>
           <a href="pages/our-story.html" class="footer__link">Our Story</a>
           <a href="pages/crafting-excellence.html" class="footer__link">Crafting Excellence</a>
-          <a href="pages/wines.html" class="footer__link">Our Wines</a>
+          <a href="pages/our-soils.html" class="footer__link">Our Soils</a>
+          <a href="pages/wines.html" class="footer__link">Wines</a>
           <a href="pages/wine-club.html" class="footer__link">Wine Club</a>
         </div>
         <div>
